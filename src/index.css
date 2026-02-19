@@ -33,6 +33,7 @@
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 0 72% 51%;
+    --rating: 45 93% 47%;
 
     --radius: 0.5rem;
 
@@ -108,5 +109,13 @@
 
   .btn-glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
