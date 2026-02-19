@@ -1,12 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import FeatureSection from "@/components/FeatureSection";
+import PricingSection from "@/components/PricingSection";
+import Footer from "@/components/Footer";
+import AuthModal from "@/components/AuthModal";
 
 const Index = () => {
+  const [authOpen, setAuthOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar onSignIn={() => setAuthOpen(true)} />
+      <HeroSection onGetStarted={() => setAuthOpen(true)} />
+      <FeatureSection />
+      <PricingSection onSelect={() => setAuthOpen(true)} />
+      <Footer />
+      <AuthModal open={authOpen} onOpenChange={setAuthOpen} />
     </div>
   );
 };
